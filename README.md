@@ -37,6 +37,8 @@ workWechat.message.sendMessage({
 
 #### sendText
 
+发送文本给成员。
+
 ```js
 workwechat.message.sendText({
   touser?: string[]|string;
@@ -49,6 +51,10 @@ workwechat.message.sendText({
 ```
 
 #### sendImage
+
+发送图片给成员。
+
+mediaId 通过 `source.upload` 可以获得。
 
 ```js
 workwechat.message.sendImage({
@@ -64,9 +70,13 @@ workwechat.message.sendImage({
 #### receiveMsgVerify
 
 企业微信推送过来的校验接口的校验方法.
+
 当在企业微信后台配置接收消息相关内容并保存信息的时候会产生校验请求。
+
 这个请求会请求到配置的服务中，然后需要对请求上的一些参数进行解码，并将解码结果作为响应。
+
 如果能正常响应，则为校验通过，可以保存设置。
+
 本方法就用于校验相关工作。
 
 可以配合 utils.getReceiveMsgVerifyParamsFromQuery 使用。
@@ -83,7 +93,9 @@ workwechat.message.receiveMsgVerify({
 #### receiveMsgDecode
 
 消息接收解密方法。
+
 当配置好消息接收api后，企业微信就会向配置的接口推送消息，推送来的消息需要进行解密。
+
 可以配合 utils.getReceiveMsgDecodeParamsFromQuery 使用。
 
 ```js
@@ -226,7 +238,9 @@ workwechat.group.sendText({
 #### getReceiveMsgVerifyParamsFromQuery
 
 当在后台配置了接收消息的接口后，企业微信会发送校验接口过来。
+
 校验接口需要处理一些解码相关操作，对应到 sdk 中的 message.receiveMsgVerify 方法。
+
 本方法提供了解码方法需要的一些参数，直接从query中取。
 
 ``` js
@@ -235,15 +249,13 @@ const verifyOptions = workWechat.utils.getReceiveMsgVerifyParamsFromQuery(reques
 const verify = workWechat.message.receiveMsgVerify(verifyOptions);
 ```
 
-```js
-workwechat.group.getReceiveMsgVerifyParamsFromQuery(query);
-```
-
 #### getReceiveMsgDecodeParamsFromQuery
 
 
 当自建应用开启了消息推送，并通过校验后，会推送消息到配置的接口上。
+
 这里可以用于获取 sdk 对应解码接口（message.receiveMsgDecode）需要的参数。
+
 还有一个参数( originXML )需要从 body 取。
 
 ``` js
