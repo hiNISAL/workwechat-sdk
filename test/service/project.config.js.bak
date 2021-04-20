@@ -1,0 +1,9 @@
+module.exports = {
+  // 用户接收应用消息
+  token: '',
+  appid: '',
+  encodingAESKey: '',
+
+  // 用于申请 access token
+  appSecret: '',
+};

@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser", // ESLint的解析器换成 @typescript-eslint/parser 用于解析ts文件
+  "extends": [
+    "standard",
+    "plugin:@typescript-eslint/recommended"
+  ], // 让ESLint继承 @typescript-eslint/recommended 定义的规则
+  "env": {
+    "node": true
+  },
+  "rules": {
+    // https://cn.eslint.org/docs/rules/
+    "comma-dangle": "off",
+    "indent": ["warn", 2],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "semi": "off",
+    "no-case-declarations": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    // ts-eslint
+    "@typescript-eslint/no-explicit-any": "off"
+    // "@typescript-eslint/no-unused-vars": ["warn", {
+    //   "args": "none"
+    // }]
+  }
+}

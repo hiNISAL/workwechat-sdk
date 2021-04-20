@@ -1,0 +1,7 @@
+# 需要忽略的文件夹
+node_modules/
+dist/
+
+# 不必要进行检查的配置文件
+commitlint.config.js
+test/
