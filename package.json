@@ -1,6 +1,6 @@
 {
   "name": "workwechat-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "企业微信自建应用 SDK",
   "main": "./dist/index.js",
   "scripts": {
@@ -12,8 +12,10 @@
   "keywords": [
     "企业微信",
     "SDK",
+    "自建应用 SDK",
     "自建应用",
-    "企业微信自建应用"
+    "企业微信自建应用",
+    "企业微信自建应用 SDK"
   ],
   "author": "RANDO",
   "license": "MIT",
