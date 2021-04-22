@@ -1,5 +1,5 @@
-import WechatCrypto from 'wechat-crypto';
-import xml2js from 'xml2js';
+import * as WechatCrypto from 'wechat-crypto';
+import * as xml2js from 'xml2js';
 import { formatMessage } from './formatMessage';
 
 interface CryptorPushMessageDecodeMethodOptions extends CryptorPushMessageDecodeOptions {

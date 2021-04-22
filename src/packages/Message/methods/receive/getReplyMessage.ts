@@ -1,4 +1,4 @@
-import WechatCrypto from 'wechat-crypto';
+import * as WechatCrypto from 'wechat-crypto';
 import { replyXML } from './replyXML';
 
 /*
