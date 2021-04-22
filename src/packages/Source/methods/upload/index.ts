@@ -1,7 +1,7 @@
 import { AxiosInstance } from 'axios';
-import FormData from 'form-data';
 import * as mimetype from 'mimetype';
 import concat = require('concat-stream');
+import FormData = require('form-data');
 
 interface SourceUploadMethodOptions extends SourceUploadOptions {
   request: AxiosInstance,

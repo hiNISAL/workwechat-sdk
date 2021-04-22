@@ -1,7 +1,8 @@
 import BaseModule from '../';
 import {
   sendText, urlVerify, pushMessageDecode, getReplyMessage,
-  sendImage,
+  sendImage, sendTextCard, sendMarkdown, sendNews,
+  sendMPNews,
 } from './methods';
 
 class Message extends BaseModule {
@@ -18,11 +19,67 @@ class Message extends BaseModule {
     });
   }
 
+  // -------------------------------------------------------------------------------
+  // 发送图片
   public sendImage(options: MessageSendImageOptions): any {
     const {
       agentid = this.config.agentId,
     } = options;
     return sendImage({
+      ...options,
+      agentid,
+      request: this.request!,
+    });
+  }
+
+  // -------------------------------------------------------------------------------
+  // 发送 文本卡片信息
+  public sendTextCard(options: MessageSendTextCardOptions): any {
+    const {
+      agentid = this.config.agentId,
+    } = options;
+
+    return sendTextCard({
+      ...options,
+      agentid,
+      request: this.request!,
+    });
+  }
+
+  public sendMarkdown(options: MessageSendMarkdownOptions) {
+    const {
+      agentid = this.config.agentId,
+    } = options;
+    console.log({
+      ...options,
+      agentid,
+      request: this.request!,
+    });
+    return sendMarkdown({
+      ...options,
+      agentid,
+      request: this.request!,
+    });
+  }
+
+  public sendNews(options: MessageSendNewsOptions) {
+    const {
+      agentid = this.config.agentId,
+    } = options;
+
+    return sendNews({
+      ...options,
+      agentid,
+      request: this.request!,
+    });
+  }
+
+  public sendMPNews(options: MessageSendMPNewsOptions) {
+    const {
+      agentid = this.config.agentId,
+    } = options;
+
+    return sendMPNews({
       ...options,
       agentid,
       request: this.request!,

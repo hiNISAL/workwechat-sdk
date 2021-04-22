@@ -34,6 +34,37 @@ interface MessageSendImageOptions extends MessageSendMsgOptions {
   mediaId: string;
 }
 
+interface MessageSendTextCardOptions extends MessageSendMsgOptions {
+  title: string;
+  desc: string;
+  url: string;
+  btntxt?: string;
+}
+
+interface MessageSendMarkdownOptions extends MessageSendMsgOptions {
+  content: string;
+}
+
+interface MessageSendNewsOptions extends MessageSendMsgOptions {
+  articles: {
+    title: string;
+    desc?: string;
+    url: string;
+    picurl?: string;
+  }[],
+}
+
+interface MessageSendMPNewsOptions extends MessageSendMsgOptions {
+  articles: {
+    title: string;
+    thumbMediaId: string;
+    author?: string;
+    contentSourceURL?: string;
+    content: string;
+    digest?: string;
+  }[];
+}
+
 // -------------------------------------------------------------------------------
 // Cryptor 相关
 interface CryptorURLVerifyOptions {
