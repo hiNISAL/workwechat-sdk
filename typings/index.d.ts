@@ -115,3 +115,9 @@ interface SourceUploadMediaCommonOptions {
   media: any;
   filename: string;
 }
+
+// -------------------------------------------------------------------------------
+// User 相关
+interface UserInfoOptions {
+  userId: string;
+}

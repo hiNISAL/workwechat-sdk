@@ -38,7 +38,7 @@ class Message extends BaseModule {
     const {
       agentid = this.config.agentId,
     } = options;
-
+    console.log(options);
     return sendTextCard({
       ...options,
       agentid,

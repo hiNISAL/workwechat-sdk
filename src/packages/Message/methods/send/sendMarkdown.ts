@@ -10,7 +10,7 @@ export const sendMarkdown = (options: MessageSendMarkdownMethodOptions): any => 
     const { request } = options;
 
     options = preHandlerOptions(options);
-    console.log(options.content);
+
     const params = {
       ...getBaseRequestPrams(options),
       msgtype: 'markdown',
@@ -23,7 +23,6 @@ export const sendMarkdown = (options: MessageSendMarkdownMethodOptions): any => 
     request.post('https://qyapi.weixin.qq.com/cgi-bin/message/send', params, {
       withAccessToken: true,
     }).then((res) => {
-      console.log(res.data);
       resolve(res.data);
     }).catch(e => {
       console.log(e);

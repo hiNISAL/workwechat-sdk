@@ -4,6 +4,7 @@ import Token from './packages/Token';
 import Message from './packages/Message';
 import Utils from './packages/Utils';
 import Source from './packages/Source';
+import User from './packages/User';
 import axios, { AxiosInstance } from 'axios';
 import initRequest from './helpers/initRequest';
 
@@ -28,6 +29,8 @@ class WorkWechat {
 
   public readonly source = new Source();
 
+  public readonly user = new User();
+
   public constructor(
     config: AppConfig,
   ) {
@@ -42,6 +45,7 @@ class WorkWechat {
     this.group.injectSDK(this);
     this.utils.injectSDK(this);
     this.source.injectSDK(this);
+    this.user.injectSDK(this);
 
     this.__initRequest();
   }
