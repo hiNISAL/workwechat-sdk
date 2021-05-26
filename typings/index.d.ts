@@ -162,3 +162,12 @@ interface SourceUploadMediaCommonOptions {
 interface UserInfoOptions {
   userId: string;
 }
+
+// -------------------------------------------------------------------------------
+// Checkin 相关
+
+interface CheckinGetDataMonthOptions extends AccessToken {
+  starttime?: number;
+  endtime?: number;
+  useridlist?: string[];
+}
