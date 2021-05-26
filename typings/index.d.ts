@@ -14,6 +14,7 @@ interface AppConfig {
   encodingAESKey?: string;
   accessToken?: string;
   agentId?: string|number;
+  id?: string;
 }
 
 // -------------------------------------------------------------------------------
@@ -93,6 +94,46 @@ interface GroupSendTextOptions {
   safe?: 0|1;
   content: string;
   chatid: string;
+}
+
+interface GroupSendMarkdownOptions {
+  chatid: string;
+  content: string;
+  safe?: 0|1;
+}
+
+interface GroupSendNewsOptions {
+  safe?: 0|1;
+  chatid: string;
+  articles: {
+    title: string;
+    desc?: string;
+    url: string;
+    picurl?: string;
+  }[];
+}
+
+
+interface GroupSendMPNewsOptions {
+  chatid: string;
+  safe?: 0|1;
+  articles: {
+    title: string;
+    thumbMediaId: string;
+    author?: string;
+    contentSourceURL?: string;
+    content: string;
+    digest?: string;
+  }[];
+}
+
+interface GroupSendTextCardOptions {
+  safe?: 0|1;
+  chatid: string;
+  title: string;
+  desc: string;
+  url: string;
+  btntxt?: string;
 }
 
 interface GroupCreateOptions {
