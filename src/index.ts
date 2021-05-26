@@ -5,6 +5,8 @@ import Message from './packages/Message';
 import Utils from './packages/Utils';
 import Source from './packages/Source';
 import User from './packages/User';
+import Checkin from './packages/Checkin';
+import Department from './packages/Department';
 import axios, { AxiosInstance } from 'axios';
 import initRequest from './helpers/initRequest';
 
@@ -31,10 +33,17 @@ class WorkWechat {
 
   public readonly user = new User();
 
+  public readonly department = new Department();
+  // department 的别名
+  public readonly dep: Department;
+
+  public readonly checkin = new Checkin();
+
   public constructor(
     config: AppConfig,
   ) {
     this.__config = config;
+    this.dep = this.department;
     this.__init();
   }
 
@@ -46,6 +55,8 @@ class WorkWechat {
     this.utils.injectSDK(this);
     this.source.injectSDK(this);
     this.user.injectSDK(this);
+    this.department.injectSDK(this);
+    this.checkin.injectSDK(this);
 
     this.__initRequest();
   }

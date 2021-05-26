@@ -265,3 +265,29 @@ const message = await workWechat.message.receiveMsgDecode({
   originXML: request.body,
 });
 ```
+
+### department
+
+### list
+
+获取部门列表。
+
+```js
+workwechat.department.list();
+```
+
+### users
+
+获取部门下的用户。
+
+```js
+// dep 是 department 的别名
+workwechat.dep.users(
+  depId, // 部门id
+  fetchChild, // 是否递归获取子部门成员
+);
+```
+
+## checkin
+
+## user
