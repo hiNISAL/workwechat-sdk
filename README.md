@@ -4,6 +4,8 @@
 
 企业微信自建应用 SDK。
 
+只需要群机器人的能力可以使用 [workwechat-bot](https://www.npmjs.com/package/workwechat-bot) 包。
+
 ## 安装
 
 ```shell
