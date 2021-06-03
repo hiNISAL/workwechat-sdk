@@ -113,7 +113,6 @@ interface GroupSendNewsOptions {
   }[];
 }
 
-
 interface GroupSendMPNewsOptions {
   chatid: string;
   safe?: 0|1;

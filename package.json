@@ -1,6 +1,6 @@
 {
   "name": "workwechat-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "企业微信自建应用 SDK",
   "main": "./dist/index.js",
   "scripts": {
