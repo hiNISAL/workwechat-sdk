@@ -16,13 +16,17 @@ npm i workwechat-sdk -S
 const WorkWechat = require('workwechat-sdk');
 
 const workwechat = new WorkWechat({
-  // 用户接收应用消息
-  token: '',
-  appid: '',
-  encodingAESKey: '',
+  // 企业id
+  corpId: '',
+  // 应用的secret
+  corpSecret: '',
+  // 企业微信应用id
+  agentId: '',
 
-  // 用于申请 access token
-  appSecret: '',
+  // 接收消息用的配置
+  encodingAESKey: '',
+  // 接收消息用的配置
+  appToken: '',
 });
 
 workWechat.message.sendMessage({
