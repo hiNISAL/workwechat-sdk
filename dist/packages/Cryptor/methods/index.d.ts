@@ -1,0 +1,1 @@
+export { createCryptor } from './createCryptor';
