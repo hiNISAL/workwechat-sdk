@@ -7,6 +7,14 @@ class Checkin extends BaseModule {
   public async getDataMonth(options: CheckinGetDataMonthOptions) {
     return options;
   }
+
+  @APIPost('/checkin/getcheckindata')
+  public async getDataDaily(options: CheckinGetDataDailyOptions) {
+    return {
+      opencheckindatatype: 3,
+      ...options,
+    };
+  }
 }
 
 export default Checkin;

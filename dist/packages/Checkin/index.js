@@ -27,8 +27,16 @@ class Checkin extends __1.default {
             return options;
         });
     }
+    getDataDaily(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return Object.assign({ opencheckindatatype: 3 }, options);
+        });
+    }
 }
 __decorate([
     decorators_1.APIPost('/checkin/getcheckin_monthdata')
 ], Checkin.prototype, "getDataMonth", null);
+__decorate([
+    decorators_1.APIPost('/checkin/getcheckindata')
+], Checkin.prototype, "getDataDaily", null);
 exports.default = Checkin;

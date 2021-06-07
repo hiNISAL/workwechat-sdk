@@ -170,3 +170,9 @@ interface CheckinGetDataMonthOptions extends AccessToken {
   endtime?: number;
   useridlist?: string[];
 }
+
+interface CheckinGetDataDailyOptions extends AccessToken {
+  starttime?: number;
+  endtime?: number;
+  useridlist?: string[];
+}
