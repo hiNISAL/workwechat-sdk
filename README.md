@@ -274,7 +274,7 @@ const message = await workWechat.message.receiveMsgDecode({
 
 ### department
 
-### list
+#### list
 
 获取部门列表。
 
@@ -282,7 +282,7 @@ const message = await workWechat.message.receiveMsgDecode({
 workwechat.department.list();
 ```
 
-### users
+#### users
 
 获取部门下的用户。
 
@@ -294,6 +294,8 @@ workwechat.dep.users(
 );
 ```
 
-## checkin
+### checkin
 
-## user
+### application
+
+#### createMenu
