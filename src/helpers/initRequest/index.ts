@@ -25,6 +25,13 @@ export default (sdk: SDK) => {
       config.url = `${config.url}${config.url?.includes('?') ? '&' : '?'}${accessToken}`;
     }
 
+    // 如果要加 agent id 就给他拼上去
+    if (config.withAgentId) {
+      const agentId = `agentid=${sdk.__config.agentId}`;
+
+      config.url = `${config.url}${config.url?.includes('?') ? '&' : '?'}${agentId}`;
+    }
+
     if (config.debug) {
       config.url = `${config.url}${config.url?.includes('?') ? '&' : '?'}debug=1`;
     }

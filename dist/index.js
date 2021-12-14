@@ -12,6 +12,7 @@ const Source_1 = __importDefault(require("./packages/Source"));
 const User_1 = __importDefault(require("./packages/User"));
 const Checkin_1 = __importDefault(require("./packages/Checkin"));
 const Department_1 = __importDefault(require("./packages/Department"));
+const App_1 = __importDefault(require("./packages/App"));
 const axios_1 = __importDefault(require("axios"));
 const initRequest_1 = __importDefault(require("./helpers/initRequest"));
 class WorkWechat {
@@ -31,8 +32,10 @@ class WorkWechat {
         this.user = new User_1.default();
         this.department = new Department_1.default();
         this.checkin = new Checkin_1.default();
+        this.application = new App_1.default();
         this.__config = config;
         this.dep = this.department;
+        this.app = this.application;
         this.__init();
     }
     __init() {
@@ -45,6 +48,7 @@ class WorkWechat {
         this.user.injectSDK(this);
         this.department.injectSDK(this);
         this.checkin.injectSDK(this);
+        this.app.injectSDK(this);
         this.__initRequest();
     }
     __initRequest() {

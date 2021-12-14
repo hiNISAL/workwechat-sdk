@@ -176,3 +176,19 @@ interface CheckinGetDataDailyOptions extends AccessToken {
   endtime?: number;
   useridlist?: string[];
 }
+
+// -------------------------------------------------------------------------------
+// App相关
+
+interface AppMenuOptions {
+  name: string;
+  type?: string;
+  pagepath?: string;
+  appid?: string;
+  key?: string;
+  sub_button?: AppCreateMenuOptions[]; // eslint-disable-line
+}
+
+interface AppCreateMenuOptions extends AccessToken {
+  button: AppMenuOptions[];
+}

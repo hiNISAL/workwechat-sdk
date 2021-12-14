@@ -7,6 +7,7 @@ import Source from './packages/Source';
 import User from './packages/User';
 import Checkin from './packages/Checkin';
 import Department from './packages/Department';
+import App from './packages/App';
 import axios, { AxiosInstance } from 'axios';
 import initRequest from './helpers/initRequest';
 
@@ -39,11 +40,16 @@ class WorkWechat {
 
   public readonly checkin = new Checkin();
 
+  public readonly application = new App();
+  // application 的别名
+  public readonly app: App;
+
   public constructor(
     config: AppConfig,
   ) {
     this.__config = config;
     this.dep = this.department;
+    this.app = this.application;
     this.__init();
   }
 
@@ -57,6 +63,7 @@ class WorkWechat {
     this.user.injectSDK(this);
     this.department.injectSDK(this);
     this.checkin.injectSDK(this);
+    this.app.injectSDK(this);
 
     this.__initRequest();
   }

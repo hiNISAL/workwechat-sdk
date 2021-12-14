@@ -7,6 +7,7 @@ import Source from './packages/Source';
 import User from './packages/User';
 import Checkin from './packages/Checkin';
 import Department from './packages/Department';
+import App from './packages/App';
 import { AxiosInstance } from 'axios';
 declare class WorkWechat {
     __config: AppConfig;
@@ -21,6 +22,8 @@ declare class WorkWechat {
     readonly department: Department;
     readonly dep: Department;
     readonly checkin: Checkin;
+    readonly application: App;
+    readonly app: App;
     constructor(config: AppConfig);
     private __init;
     private __initRequest;

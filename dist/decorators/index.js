@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.APIPost = exports.API = void 0;
-exports.API = (path, withAccessToken = true, prefix = 'https://qyapi.weixin.qq.com/cgi-bin', method = 'GET') => {
+exports.API = (path, { withAccessToken = true, withAgentId = false, prefix = 'https://qyapi.weixin.qq.com/cgi-bin', method = 'GET', } = {}) => {
     return (clazz, name, desc) => {
         const fn = clazz[name];
         method = method.toLocaleLowerCase();
@@ -21,17 +21,24 @@ exports.API = (path, withAccessToken = true, prefix = 'https://qyapi.weixin.qq.c
                     return (yield this.request.get(`${prefix}${path}`, {
                         params: res,
                         withAccessToken,
+                        withAgentId,
                     })).data;
                 }
                 else {
                     return (yield this.request.post(`${prefix}${path}`, res, {
                         withAccessToken,
+                        withAgentId,
                     })).data;
                 }
             });
         };
     };
 };
-exports.APIPost = (path, withAccessToken = true, prefix = 'https://qyapi.weixin.qq.com/cgi-bin') => {
-    return exports.API(path, withAccessToken, prefix, 'POST');
+exports.APIPost = (path, { withAccessToken = true, prefix = 'https://qyapi.weixin.qq.com/cgi-bin', withAgentId = false, } = {}) => {
+    return exports.API(path, {
+        withAccessToken,
+        withAgentId,
+        prefix,
+        method: 'POST',
+    });
 };
